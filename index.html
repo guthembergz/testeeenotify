@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultQR</title>
+    <!-- LINKS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/codigo-qr (2).png" type="image/gif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-g7J5LqR8SsWXvUzLk6cWTjVJvaq8MW5qV0kIi2f2scAqWxU7u/M6O7WJy6gWvT/J7O7Qto5l+2h1xoj8gD6Dew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- LINKS -->
+</head>
+
+<body>
+
+    <!--Exibir imagem em FullScreen-->
+    <div class="fullscreen">
+
+    </div>
+
+    <div class="backH">
+
+    </div>
+
+    <!-- Display Message's  -->
+    <p id="demo">⚠️ Por favor, cole ou digite o link para continuar!⚠️</p>
+    <p id="demo4">Iniciando seu Download...⬇️</p>
+    <p id="demo3">✅ QR Code gerado com sucesso!! ✅</p>
+
+
+    <!-- SEÇÃO DO GERADOR QR CODE -->
+    <div class="wrapper">
+        <div class="card__corner">
+            <div class="card__corner-triangle"></div>
+
+            <!-- SEÇÃO HEADER  -->
+            <header>
+                <h1>Conversor QR Code</h1>
+                <p>Cole o seu link para converter!</p>
+            </header>
+            <!-- SEÇÃO HEADER  -->
+
+            <div class="form">
+                <div class="input-container">
+                    <input type="text" id="text1" name="qrCode" placeholder="Cole o seu link aqui..." required>
+                    <div class="clear-icon" onclick="clearInput()">
+                        <i class="fas fa-xmark"></i>
+                    </div>
+                </div>
+                <button onClick="inputtext()" id="myBtn" class="myBtn">Gerar QR Code</button>
+            </div>
+
+            <div class="qr-code">
+
+                <img src="" title="Ver código QR em tela cheia" class="imgfull">
+
+            </div>
+
+            <button class="dbtn" onclick="downloadIg(this)" title="Download QR Code">DOWNLOAD</button>
+
+        </div>
+    </div>
+    <!-- SEÇÃO DO GERADOR QR CODE -->
+
+    <!-- SEÇÃO FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Made of ❤️ by <a href="https://instagram.com/csantos.sz?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"></i>
+                    @csantos.sz.</a></p>
+        </div>
+    </footer>
+
+    <!-- LINK JS-->
+    <script type="text/javascript" src="script.js"></script>
+    <!-- LINK JS-->
+
+
+</body>
+
+</html>

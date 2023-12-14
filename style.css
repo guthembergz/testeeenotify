@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgba(24, 28, 31, 255);
+}
+
+.wrapper {
+    height: 259px;
+    width: 800px;
+    background-color: #33393d;
+    max-width: 610px;
+    border-radius: 7px;
+    padding: 16px 25px;
+    transition: height 0.2 ease;
+    z-index: 1000;
+}
+
+.wrapper.active {
+    height: 650px;
+    width: 800px;
+}
+
+.wrapper.expanding {
+    transition: height 0.5s ease; /* Ajuste a duração e o tipo de transição conforme necessário */
+  }
+  
+
+h1 {
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 15px;
+    color: #8b8b8b;
+    margin-top: 10px;
+}
+
+.wrapper .form {
+    margin: 20px 0 25px;
+}
+
+.form :where(input, button) {
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgba(24, 28, 31, 255);
+    /* Cor de fundo do input */
+    color: #999999;
+}
+
+.form input {
+    border: none;
+    padding: 0 17px;
+    padding-right: 40px; /* Ajuste conforme necessário */
+}
+
+.form button {
+    background-color: #532bb3;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.wrapper .qr-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 33px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    /*  ****************** */
+    pointer-events: none;
+    /*  ****************** */
+}
+
+.wrapper.active .qr-code {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s 0.5s ease;
+}
+
+::selection {
+    color: white;
+    background: #373737;
+}
+
+
+
+
+/* WhoAmI.gif Properties */
+.btn {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    padding: 10px;
+    border: none;
+    background-color: #272727;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 10px;
+}
+
+.btn img {
+    width: 80px;
+}
+
+
+/* Funny-Face.gif Properties */
+.btn1 {
+    position: fixed;
+    top: 170px;
+    right: 30px;
+    padding: 10px;
+    border: none;
+    background-color: #272727;
+    color: black;
+    border-radius: 5px;
+    cursor: help;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 10px;
+}
+
+.btn1 img {
+    width: 80px;
+}
+
+.btn1:hover,
+.btn:hover {
+    transform: scale(1.1);
+    transition: .2s linear;
+}
+
+
+/* a tag Underline Properties */
+a {
+    text-decoration: none;
+    color: #532bb3;
+}
+
+a:hover {
+    transition: all 0.5s ease;
+    border-bottom: 1px solid;
+    padding-bottom: .5px;
+}
+
+/* Footer Section Properties */
+footer {
+    position: fixed;
+    color: rgb(117, 117, 117);
+    padding: 20px;
+    bottom: 0;
+    margin-top: auto;
+}
+
+/* Display Messages Properties */
+/* #demo {
+    top: 25%;
+    position: fixed;
+    color: rgb(255, 88, 88);
+} */
+
+
+#demo, #demo4, #demo3 {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+  
+
+/* #demo2 {
+    top: 5%;
+    position: fixed;
+    color: rgb(255, 255, 255);
+} */
+
+
+/* Adicione ao seu arquivo CSS existente */
+
+.input-container {
+    position: relative;
+}
+
+.clear-icon {
+    position: absolute;
+    top: 55%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999999;
+    font-size: 15px;
+    z-index: 2;
+}
+
+.clear-icon:hover {
+    color: #ff5555; /* Cor de destaque ao passar o mouse */
+}
+
+
+/* Adicione ao seu arquivo CSS existente */
+
+.input-container .clear-icon {
+    /* ... (estilos existentes) ... */
+    display: none; /* Adicionado para ocultar o ícone inicialmente */
+}
+
+.input-container.has-text .clear-icon {
+    display: block; /* Exibir o ícone quando houver texto no campo */
+}
+
+
+
+
+
+/* Media Queries Properties */
+@media (max-width:830px)and (min-width:0px) {
+    h1 {
+        color: aliceblue;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
+
+    p {
+        font-size: 10px;
+        color: #8b8b8b;
+        margin-top: 10px;
+    }
+    
+    .wrapper {
+        height: 259px;
+        background-color: #33393d;
+        max-width: 410px;
+        border-radius: 7px;
+        padding: 16px 25px;
+        transition: height 0.2 ease;
+        z-index: 1000;
+    }
+    
+    .wrapper.active {
+        height: 590px;
+    }
+
+    .form button {
+        background-color: #532bb3;
+        color: #fff;
+        margin-top: 20px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    
+    .form :where(input, button) {
+        width: 100%;
+        height: 45px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: rgba(24, 28, 31, 255);
+        /* Cor de fundo do input */
+        color: #999999;
+    }
+    
+    .form input {
+        border: none;
+        padding: 0 17px;
+    }
+    
+    .wrapper .qr-code {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0;
+        /*  ****************** */
+        pointer-events: none;
+        /*  ****************** */
+    }
+    
+
+    #demo {
+        display: none;
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+      
+    #demo4 {
+        display: none;
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    #demo3 {
+        display: none;
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+
+}
+
+button {
+    z-index: 1;
+}
+
+
+
+/* FullScreen Image Properties */
+.fullscreen {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: 25%;
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-color: black;
+}
+
+.fullscreen span {
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    position: fixed;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Download Button Properties */
+.dbtn {
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 7px;
+    border: none;
+    outline: none;
+    background-color: #532bb3;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+/* Back Home Button */
+.backH {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.backH button {
+    cursor: pointer;
+    background-color: #272727;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.backH button:hover {
+    transform: scale(1.1);
+}
+
+
+.card .card__corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2em;
+    height: 2em;
+    background-color: #e6e7e8;
+}
+
+.card .card__corner .card__corner-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 2em 2em 0;
+    border-color: transparent #f1f2f2 transparent transparent;
+}
